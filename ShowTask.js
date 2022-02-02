@@ -5,7 +5,7 @@ import { Button, StyleSheet, View } from "react-native";
 import Task from "./Task";
 // -------------------DISPLAY TASK--------------------------
 
-function DisplayTask({ route, navigation }) {
+function ShowTask({ route, navigation }) {
   const { taskItems, deleteTask } = route.params;
   
   return (
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DisplayTask;
+export default ShowTask;

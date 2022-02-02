@@ -34,7 +34,7 @@ function AppTask({ navigation }) {
         <Button
           title="Show my Tasks"
           onPress={() => {
-            navigation.navigate("DisplayTask", {
+            navigation.navigate("ShowTask", {
               taskItems: taskItems,
               deleteTask: deleteTask,
             });

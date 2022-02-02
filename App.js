@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 
 import AddTask from "./AddTask";
-import DisplayTask from "./DisplayTask";
+import ShowTask from "./ShowTask";
 import AppTask from "./AppTask";
 
 import { NavigationContainer } from "@react-navigation/native";
@@ -14,13 +14,24 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="AppTask" component={AppTask} />
-        <Stack.Screen name="AddTask" component={AddTask} />
-        <Stack.Screen name="DisplayTask" component={DisplayTask} />
+        <Stack.Screen
+          name="AppTask"
+          component={AppTask}
+          options={{ title: "Todo App" }}
+        />
+        <Stack.Screen
+          name="AddTask"
+          component={AddTask}
+          options={{ title: "Add Tasks" }}
+        />
+        <Stack.Screen
+          name="ShowTask"
+          component={ShowTask}
+          options={{ title: "My Tasks" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
 
 export default App;
