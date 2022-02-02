@@ -6,13 +6,12 @@ import { Button, StyleSheet, Text, View } from "react-native";
 
 function AppTask({ navigation }) {
   const [taskItems, settaskItems] = useState([]);
-  function addTask(task) {
-    settaskItems([...taskItems, task]);
+  function addTask(task,id) {
+    settaskItems([...taskItems, [task,id]]);
   }
-  function deleteTask(index) {
+  function deleteTask(id) {
     let copyItems = [...taskItems];
-    copyItems.splice(index, 1);
-    settaskItems(copyItems);
+    settaskItems(copyItems.filter(task=>task[0]!==id));
   }
   return (
     <View style={styles.container}>

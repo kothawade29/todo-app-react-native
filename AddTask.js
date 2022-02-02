@@ -8,13 +8,13 @@ import {
   View,
   Keyboard,
 } from "react-native";
-
+import { v4 as uuidv4 } from 'uuid';
 // ----------------------ADD NEW TASK-------------------------
 
 function AddTask({ route, navigation }) {
   const { addTask } = route.params;
   const [task, setTask] = useState("");
-
+  const id=uuidv4();
   return (
     <View style={styles.container}>
       <View style={styles.headerView}>
@@ -31,7 +31,7 @@ function AddTask({ route, navigation }) {
         <Button
           title="add task"
           onPress={() => {
-            addTask(task);
+            addTask(task,id);
             setTask(null);
             Keyboard.dismiss();
           }}

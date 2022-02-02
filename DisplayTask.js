@@ -7,18 +7,18 @@ import Task from "./Task";
 
 function DisplayTask({ route, navigation }) {
   const { taskItems, deleteTask } = route.params;
-
+  
   return (
     <View style={styles.displayView}>
-      {taskItems.map((item, index) => {
+      {taskItems.map((item) => {
         return (
           <View style={styles.box}>
-            <Task key={index} text={item} />
+            <Task key={item[1]} text={item[0]} />
             <Button
               style={styles.deleteButton}
               title="Delete"
               onPress={() => {
-                deleteTask(index);
+                deleteTask(item[0]);
               }}
             />
           </View>
