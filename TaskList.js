@@ -5,7 +5,7 @@ import { Button, StyleSheet, View } from "react-native";
 import Task from "./Task";
 // -------------------DISPLAY TASK--------------------------
 
-function ShowTask({ route, navigation }) {
+function TaskList({ route, navigation }) {
   const { taskItems, deleteTask } = route.params;
   
   return (
@@ -13,12 +13,12 @@ function ShowTask({ route, navigation }) {
       {taskItems.map((item) => {
         return (
           <View style={styles.box}>
-            <Task key={item[1]} text={item[0]} />
+            <Task key={item.id} text={item.task} />
             <Button
               style={styles.deleteButton}
               title="Delete"
               onPress={() => {
-                deleteTask(item[0]);
+                deleteTask(item.id);
               }}
             />
           </View>
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ShowTask;
+export default TaskList;

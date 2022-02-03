@@ -7,11 +7,11 @@ import { Button, StyleSheet, Text, View } from "react-native";
 function AppTask({ navigation }) {
   const [taskItems, settaskItems] = useState([]);
   function addTask(task,id) {
-    settaskItems([...taskItems, [task,id]]);
+    settaskItems([...taskItems, {task:task,id:id}]);
   }
   function deleteTask(id) {
     let copyItems = [...taskItems];
-    settaskItems(copyItems.filter(task=>task[0]!==id));
+    settaskItems(copyItems.filter(task=>task.id!==id));
   }
   return (
     <View style={styles.container}>
@@ -34,7 +34,7 @@ function AppTask({ navigation }) {
         <Button
           title="Show my Tasks"
           onPress={() => {
-            navigation.navigate("ShowTask", {
+            navigation.navigate("TaskList", {
               taskItems: taskItems,
               deleteTask: deleteTask,
             });

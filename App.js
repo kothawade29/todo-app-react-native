@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 
 import AddTask from "./AddTask";
-import ShowTask from "./ShowTask";
+import TaskList from "./TaskList";
 import AppTask from "./AppTask";
 
 import { NavigationContainer } from "@react-navigation/native";
@@ -25,8 +25,8 @@ function App() {
           options={{ title: "Add Tasks" }}
         />
         <Stack.Screen
-          name="ShowTask"
-          component={ShowTask}
+          name="TaskList"
+          component={TaskList}
           options={{ title: "My Tasks" }}
         />
       </Stack.Navigator>
